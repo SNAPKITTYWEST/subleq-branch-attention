@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/flowchart.jpg" width="600" alt="SUBLEQ Branch Attention Pipeline"/>
-</p>
-
 <h1 align="center">SUBLEQ Branch Attention</h1>
 
 <p align="center">
