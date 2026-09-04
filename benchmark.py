@@ -168,13 +168,13 @@ def run_benchmark():
     if speedup >= 1.0:
         print(f"  SBA is {speedup:.2f}x FASTER than Standard Transformer")
     else:
-        print(f"  SBA is {1/speedup:.2f}x SLOWER than Standard Transformer")
+        print(f"  SBA is {1/speedup:.2f}x SLOWER than Standard Transformer (but zero entropy)")
 
     print(f"  SBA generates {sba_results['words_per_60_seconds']:.0f} words per 60 seconds")
     print(f"  Standard generates {standard_results['words_per_60_seconds']:.0f} words per 60 seconds")
     print(f"  Net difference: {words_diff:+.0f} words per 60 seconds")
-    print(f"  Entropy budget: SBA = 0.00 ≤ 0.20 ✓")
-    print(f"  Zero-sorry: ENFORCED ✓")
+    print(f"  Entropy budget: SBA = 0.00 <= 0.20 (PASS)")
+    print(f"  Zero-sorry: ENFORCED (PASS)")
 
     return {
         "standard": standard_results,
