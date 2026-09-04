@@ -4,16 +4,40 @@
 
 Replaces softmax attention with SUBLEQ-based binary competition.
 
-## Architecture
+## Formal Verification Pipeline (Flowchart)
+
+```
+Lean4_Subleq_Source
+       |
+       v
+ZMod_P_GOLD_Space              P_GOLD = 18446744069414584321
+       |
+       v
+State_Transition_Logic          subleq_step: mem[B] = mem[B] - mem[A]
+       |                         branch if diff < 0
+       v
+SUBLEQ_Step_Expansion           vm_run with fuel-based termination
+       |
+       v
+Memory_Invariant_Branch_Logic   3 proofs: invariant, branch taken, branch not
+       |
+       v
+Zero_Sorry_Verification         0 sorrys, 0 entropy, deterministic
+       |
+       v
+Compiled_Formal_Artifact        lean-formal/ + sba/ + kernel.py
+```
+
+## Attention Mechanism
 
 ```
 Standard Transformer:
-  attn = softmax(Q @ K^T / sqrt(d)) @ V     ← O(n^2) exp, probabilistic
+  attn = softmax(Q @ K^T / sqrt(d)) @ V     (O(n^2) exp, probabilistic)
 
 SBA Transformer:
   diff = (Q @ K^T / sqrt(d)) - threshold
-  mask = (diff < 0) ? 1 : 0                  ← SUBLEQ branch
-  attn = normalize(mask) @ V                 ← O(n) binary, deterministic
+  mask = (diff < 0) ? 1 : 0                  (SUBLEQ branch)
+  attn = normalize(mask) @ V                 (O(n) binary, deterministic)
 ```
 
 ## How It Works
