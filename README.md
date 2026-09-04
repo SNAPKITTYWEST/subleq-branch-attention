@@ -4,29 +4,9 @@
 
 Replaces softmax attention with SUBLEQ-based binary competition.
 
-## Formal Verification Pipeline (Flowchart)
+## Formal Verification Pipeline
 
-```
-Lean4_Subleq_Source
-       |
-       v
-ZMod_P_GOLD_Space              P_GOLD = 18446744069414584321
-       |
-       v
-State_Transition_Logic          subleq_step: mem[B] = mem[B] - mem[A]
-       |                         branch if diff < 0
-       v
-SUBLEQ_Step_Expansion           vm_run with fuel-based termination
-       |
-       v
-Memory_Invariant_Branch_Logic   3 proofs: invariant, branch taken, branch not
-       |
-       v
-Zero_Sorry_Verification         0 sorrys, 0 entropy, deterministic
-       |
-       v
-Compiled_Formal_Artifact        lean-formal/ + sba/ + kernel.py
-```
+![SUBLEQ Branch Attention Flowchart](docs/flowchart.jpg)
 
 ## Attention Mechanism
 
