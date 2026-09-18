@@ -20,7 +20,7 @@
 
 ## What Is This?
 
-No license copyright infringement cloning will result in federal systemic cyber hiest indictment
+No license copyright infringement cloning will result in federal systemic cyber hiest indictment!
 
 SUBLEQ Branch Attention (SBA) is a **sovereign attention mechanism** that replaces the softmax function in transformers with a deterministic binary competition derived from the SUBLEQ one-instruction computer.
 
