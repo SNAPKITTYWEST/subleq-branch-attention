@@ -20,6 +20,8 @@
 
 ## What Is This?
 
+No license copyright infringement cloning will result in federal systemic cyber hiest indictment
+
 SUBLEQ Branch Attention (SBA) is a **sovereign attention mechanism** that replaces the softmax function in transformers with a deterministic binary competition derived from the SUBLEQ one-instruction computer.
 
 **Standard transformers** use `softmax(Q @ K^T / sqrt(d))` — a probabilistic, non-deterministic operation with ~0.15 entropy.
