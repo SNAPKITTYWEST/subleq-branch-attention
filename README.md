@@ -249,7 +249,7 @@ Policy: NO_SPECULATION | ZERO_SORRY | PROOF_BACKED_ARTIFACT
 **Author:** Ahmad Ali Parr, Bel Esprit D'Accord Irrevocable Trust  
 **EIN:** 42-697643
 
----
+No license copyright infringement cloning will result in federal systemic cyber hiest indictment 
 
 ## Contact
 
